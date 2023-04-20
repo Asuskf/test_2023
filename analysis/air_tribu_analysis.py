@@ -22,6 +22,17 @@ def saveTable(spark_dataframe, table_name: str, temp_table=""):
 # COMMAND ----------
 
 def dataFlights(filter_by : str, top = 5, order_by = "DESC"):
+    """
+    Automate the query to find out from which country the planes
+    arrived or left. Taking the most important x
+        params:
+            - filter_by: This variable will be the column with which the data will be filtered
+            - top: Number of data to display
+            - order_by: ascending (ASC)
+                        descending (DESC)
+        return:
+            query: Query with changes you need
+    """
     query = f"""
     SELECT
         pais,
@@ -70,7 +81,18 @@ display(origin_flights)
 
 # COMMAND ----------
 
-def moreLessFlights(top = 5, order_by = 'DESC'):    
+def moreLessFlights(top = 5, order_by = 'DESC'):
+    """
+    Automate the query to find out the day with more or fewer flights
+    arrived or left. Taking the most important x
+        params:
+            - filter_by: This variable will be the column with which the data will be filtered
+            - top: Number of data to display
+            - order_by: ascending (ASC)
+                        descending (DESC)
+        return:
+            query: Query with changes you need
+    """
     query = f"""
     SELECT
         dia,
@@ -120,6 +142,17 @@ display(less_flights)
 # COMMAND ----------
 
 def moreLessDelay(top = 5, order_by = 'DESC'):
+    """
+    Automate the query to find out the day with more or fewer delay
+    arrived or left. Taking the most important x
+        params:
+            - filter_by: This variable will be the column with which the data will be filtered
+            - top: Number of data to display
+            - order_by: ascending (ASC)
+                        descending (DESC)
+        return:
+            query: Query with changes you need
+    """
     query = f"""
     SELECT
         dia,
