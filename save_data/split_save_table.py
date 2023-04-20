@@ -91,7 +91,7 @@ def saveTable(spark_dataframe, table_name: str, temp_table=""):
     """
     if temp_table == "":
         temp_table = table_name
-    spark_dataframe.write.format("delta").option("overwriteSchema", "false").mode("overwrite").save(f"/dbfs/user/hive/warehouse/{table_name}.delta")
+    spark_dataframe.write.format("delta").option("overwriteSchema", "true").mode("overwrite").saveAsTable(table_name)
 
 # COMMAND ----------
 
